@@ -32,14 +32,15 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./lib && tsc",
+    "build": "yarn lint && rimraf ./lib && tsc",
     "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
+    "lint:fix": "tslint -p tsconfig.json --quiet --fix",
     "ts-coverage": "typescript-coverage-report --threshold=86",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test",
+    "prepublishOnly": "yarn lint && yarn test",
     "postversion": "git push && git push --tags",
     "version": "yarn run format && git add -A src"
   },
