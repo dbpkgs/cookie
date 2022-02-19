@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "@dbpkg/cookie",
+  "version": "1.0.0",
+  "description": "A lightweight browser cookie package for frontend applications",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbpkgs/cookie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dbpkgs/cookie/issues"
+  },
+  "author": "{name: \"Sheldon Welinga\", email: \"sheldonwelinga@gmail.com\"}",
+  "engines": {
+    "node": "~14.17.1"
+  },
+  "keywords": [
+    "@dbpkg/cookie",
+    "cookie",
+    "cookie-ts",
+    "ts-cookie",
+    "cookie-js",
+    "js-cookie",
+    "cookie-browser",
+    "browser-cookie"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node './src/index.ts'",
+    "test": "echo \"No test specified\""
+  }
+}
