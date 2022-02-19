@@ -33,12 +33,15 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"No test specified\"",
+    "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
     "ts-node": "^10.5.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
