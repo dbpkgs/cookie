@@ -42,7 +42,7 @@ jobs:
           cache: yarn
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install
-      - run: yarn version --new-version %s
+      - run: yarn test
       - run: yarn publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
