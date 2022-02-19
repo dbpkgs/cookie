@@ -1,5 +1,7 @@
 # A Browser Cookie
 
+[![Cookie Actions Status](https://github.com/dbpkgs/cookie/workflows/npm-publish/badge.svg)](https://github.com/dbpkgs/cookie/actions)
+
 A lightweight browser cookie for frontend applications
 
 ## Installation
@@ -19,9 +21,9 @@ yarn add @dbpkgs/cookie
 ### Set Cookie
 
 ```ts
-import cookie from '@dbpkgs/cookie'
+import cookie from '@dbpkgs/cookie';
 
-cookie.set('COOKIE_NAME', 'COOKIE_VALUE', options)
+cookie.set('COOKIE_NAME', 'COOKIE_VALUE', options);
 //options are optional, check below for acceptable options
 ```
 
@@ -39,27 +41,27 @@ cookie.set('COOKIE_NAME', 'COOKIE_VALUE', options)
 ### Get Cookie
 
 ```ts
-import cookie from '@dbpkgs/cookie'
+import cookie from '@dbpkgs/cookie';
 
-cookie.get('COOKIE_NAME')
+cookie.get('COOKIE_NAME');
 ```
 
 ### Remove Cookie
 
 ```ts
-import cookie from '@dbpkgs/cookie'
+import cookie from '@dbpkgs/cookie';
 
-cookie.remove('COOKIE_NAME')
+cookie.remove('COOKIE_NAME');
 ```
 
 ## Example Usage
 
 ```ts
-import cookie from '@dbpkgs/cookie'
+import cookie from '@dbpkgs/cookie';
 
 cookie.set('session', 'Uxc70_67gGuHHvAmTy10a', {
   expires: new Date(2022, 03, 13),
   path: '',
-  secure: true
-})
+  secure: true,
+});
 ```
