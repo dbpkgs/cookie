@@ -2,7 +2,8 @@
   "name": "@dbpkgs/cookie",
   "version": "1.0.1",
   "description": "A lightweight browser cookie for frontend applications",
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
@@ -18,6 +19,7 @@
     "node": "~14.17.1"
   },
   "keywords": [
+    "@dbpkgs/cookie",
     "@dbpkg/cookie",
     "cookie",
     "cookie-ts",
@@ -30,7 +32,6 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node './src/index.ts'",
     "test": "echo \"No test specified\"",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
