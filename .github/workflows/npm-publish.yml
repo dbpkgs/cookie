@@ -47,3 +47,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          env:
+          NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
