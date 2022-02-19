@@ -1,6 +1,7 @@
 {
   "name": "@dbpkgs/cookie",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "private": true,
   "description": "A lightweight browser cookie for frontend applications",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,10 +32,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf ./lib && tsc",
+    "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "ts-coverage": "typescript-coverage-report --threshold=86"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
