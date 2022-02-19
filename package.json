@@ -1,6 +1,7 @@
 {
   "name": "@dbpkgs/cookie",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "private": true,
   "description": "A lightweight browser cookie for frontend applications",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

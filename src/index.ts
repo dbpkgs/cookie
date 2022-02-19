@@ -19,6 +19,17 @@ module Cookie {
   if (typeof doc !== 'object') doc = { cookie: '' };
   if (typeof doc.cookie !== 'string') doc.cookie = '';
 
+  /**
+   * This method will get your cookies from the browser with the specified key
+   *
+   * @param {string} key - The cookie string used to uniquely identify the cookie in the browser
+   *
+   * @returns {string | null} - The return value of the found cookie with the specified key provided
+   *
+   * @example
+   * cookie.get("session_value")
+   *
+   */
   export const get = (key: string): string | null => {
     if (doc.cookie) {
       const splittedCookie = doc.cookie.split(/;\cookieString*/);
@@ -33,6 +44,26 @@ module Cookie {
     return null;
   };
 
+  /**
+   * This method will set your cookies to the browser the specified key and value provided.
+   * If options are provided the value option values will also be set in the cookie storage in the browser
+   *
+   * @param {string} key - The cookie string used to uniquely identify the cookie in the browser
+   *
+   * @param {string} value - The value of the cookie you need to set
+   *
+   * @param {Options} options - The optional parameters to pass when setting the cookie
+   *
+   * @returns {string | undefined} - The return value of the set cookie
+   *
+   * @example
+   * cookie.set('session_value', 'Uxc70_67gGuHHvAmTy10a', {
+   *    expires: new Date(2022, 03, 13),
+   *    path: '',
+   *    secure: true
+   * })
+   *
+   */
   export const set = (key: string, value: string, options?: Options): string | undefined => {
     let opts: Options | undefined = options;
 
@@ -46,6 +77,14 @@ module Cookie {
     return cookieString;
   };
 
+  /**
+   * This method will remove your cookie from the browser with the specified key
+   *
+   * @param {string} key - The cookie string used to uniquely identify the cookie in the browser
+   *
+   * @example
+   * cookie.remove("session_value")
+   */
   export const remove = (key: string): void => {
     let cookieString = encode(key) + '=';
     cookieString += '; expires=' + new Date(0);
