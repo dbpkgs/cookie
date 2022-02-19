@@ -34,8 +34,8 @@ jobs:
           publish_command: 'yarn'
           publish_args: '--non-interactive'
           registry-url: https://registry.npmjs.org/
-        - run: yarn ci
-        - run: yarn publish
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: yarn ci
+      - run: yarn publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
