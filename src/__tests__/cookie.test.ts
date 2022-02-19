@@ -82,6 +82,5 @@ test('Set cookie with options and get decorded cookie to return proper cookie st
       'Fri Apr 15 2022',
     )}; path=/; domain=https://example.com; secure`,
   );
-  console.log(cookie.get('test_session'));
   expect(cookie.get('test_session')).toBe('Ab7MNgGyql89hpPalIdgql01gTjkaGb5');
 });
