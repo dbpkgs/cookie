@@ -8,14 +8,14 @@ on:
       - master # Change this to your default branch
 jobs:
   build:
-    name: yarn-test
+    name: build and run tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: yarn ci
+      - run: yarn build
       - run: yarn test
   npm-publish:
     name: npm-publish
@@ -34,8 +34,6 @@ jobs:
           publish_command: 'yarn'
           publish_args: '--non-interactive'
           registry-url: https://registry.npmjs.org/
-      - name: Run yarn ci
-        run: yarn ci
       - name: Run yarn publish
         run: yarn publish
         env:
