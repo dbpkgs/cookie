@@ -1,6 +1,6 @@
 # A Browser Cookie
 
-[![Cookie Actions Status](https://github.com/dbpkgs/cookie/workflows/npm-publish/badge.svg)](https://github.com/dbpkgs/cookie/actions)
+[![Cookie Action Status](https://github.com/dbpkgs/cookie/workflows/npm-publish/badge.svg)](https://github.com/dbpkgs/cookie/actions)
 
 A lightweight browser cookie for frontend applications
 
