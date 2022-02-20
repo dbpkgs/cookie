@@ -33,15 +33,17 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn lint && rimraf ./lib && tsc",
+    "check:type": "tsc --project tsconfig.json",
+    "check:format": "prettier --check '**/*.{js,json,md,ts,tsx,yaml,yml}'  --ignore-path ./.prettierignore",
     "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
-    "test": "jest --config jestconfig.json",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "prettier --write '**/*.{js,json,md,ts,tsx,yaml,yml,sh,graphql}'",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn check:type && yarn lint && yarn test",
+    "postversion": "git push && git push --tags",
     "lint": "tslint -p tsconfig.json",
     "lint:fix": "tslint -p tsconfig.json --quiet --fix",
+    "test": "jest --config jestconfig.json",
     "ts-coverage": "typescript-coverage-report --threshold=86",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn lint && yarn test",
-    "postversion": "git push && git push --tags",
     "version": "yarn run format && git add -A src"
   },
   "devDependencies": {
