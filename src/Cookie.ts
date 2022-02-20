@@ -9,7 +9,7 @@ export const encode = window.encodeURIComponent;
 export const decode = window.decodeURIComponent;
 
 export default class Cookie {
-  doc: Partial<Document> | undefined | string;
+  private doc: Partial<Document> | undefined | string;
   constructor(domDocument?: Partial<Document> | string) {
     this.doc = domDocument;
 
