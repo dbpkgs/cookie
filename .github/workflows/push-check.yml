@@ -34,4 +34,4 @@ jobs:
       - name: Build the app and checking if build passes
         run: yarn build
       - name: Check if all tests are passing
-      - run: yarn test
+        run: yarn test
