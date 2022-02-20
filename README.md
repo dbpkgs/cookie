@@ -2,7 +2,7 @@
 
 [![Cookie Action Status](https://github.com/dbpkgs/cookie/workflows/npm-publish/badge.svg)](https://github.com/dbpkgs/cookie/actions) [![Downloads Action Status](https://img.shields.io/npm/dt/@dbpkgs/cookie.svg)](https://www.npmjs.com/package/@dbpkgs/cookie)
 
-A lightweight browser cookie for frontend applications
+A lightweight browser cookie package for frontend applications
 
 ## Installation
 
@@ -56,6 +56,8 @@ cookie.remove('COOKIE_NAME');
 
 ## Example Usage
 
+### Testing in applications
+
 ```ts
 import cookie from '@dbpkgs/cookie';
 
@@ -65,3 +67,21 @@ cookie.set('session', 'Uxc70_67gGuHHvAmTy10a', {
   secure: true,
 });
 ```
+
+### Testing in unit test libraries
+
+At the moment the library is being tested with jest unit testing library
+
+```ts
+import cookie from '@dbpkgs/cookie';
+
+test('Check if cookie is set to browser properly', () => {
+  expect(cookie.set('test_session', 'Ab7MNgGyql89hpPalIdgql01gTjkaGb5')).toBe(
+    'test_session=Ab7MNgGyql89hpPalIdgql01gTjkaGb5',
+  );
+});
+```
+
+## License
+
+MIT
