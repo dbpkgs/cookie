@@ -1,10 +1,9 @@
 ---
-name: Feature request
-about: Suggest an idea to help us improve this software
-title: "[FEATURE]"
+name: '🚀 Feature request'
+about: You have a better idea that will make @dbpkgs/cookie better or want to discuss some aspect of the software
+title: 'Feature'
 labels: Feature suggestion
 assignees: ''
-
 ---
 
 **Is your feature request related to a problem? Please describe.**
