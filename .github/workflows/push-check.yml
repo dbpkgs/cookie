@@ -2,7 +2,7 @@
 # The workflow runs on git push
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
-name: push-checks
+name: Push changes to github
 on:
   push:
 jobs:
