@@ -1,12 +1,12 @@
-type Options = {
+interface Options {
   expires?: Date;
   path?: string;
   domain?: string;
   secure?: boolean;
-};
+}
 
-export const encode = window.encodeURIComponent;
-export const decode = window.decodeURIComponent;
+export const encode = global?.window?.encodeURIComponent;
+export const decode = global?.window?.decodeURIComponent;
 
 export default class Cookie {
   private doc: Partial<Document> | undefined | string;
@@ -101,6 +101,6 @@ export default class Cookie {
   };
 }
 
-//   const cookie = new Cookie(document);
-//   export const Cookies = Cookie;
-//   export default cookie;
+// const cookie = new Cookie(global?.window?.document);
+// export const Cookies = Cookie;
+// export default cookie;
