@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.0 (May 10, 2022)
+
+- Add support for applications with both server and client rendering like nextjs and gatsby
+- Bug fix for multiple cookie values
+
 ## 1.1.0 (Feb 20, 2022)
 
 - Tighten unit tests for testing libraries
