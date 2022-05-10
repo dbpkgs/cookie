@@ -10,7 +10,7 @@ export const decode = global?.window?.decodeURIComponent;
 
 export default class Cookie {
   private doc: Partial<Document> | undefined | string;
-  constructor(domDocument?: Partial<Document> | string) {
+  constructor(domDocument?: Partial<Document & { cookie: string }> | string) {
     this.doc = domDocument;
 
     if (typeof domDocument === 'object') {
@@ -37,9 +37,16 @@ export default class Cookie {
     if (typeof this.doc === 'object' && this.doc.cookie) {
       const splittedCookie = this.doc.cookie.split(/;\cookieString*/);
       for (let cookieIndex = 0; cookieIndex < splittedCookie.length; cookieIndex++) {
-        const cookieKeyValue = splittedCookie[cookieIndex]?.split('=');
-        const cookieKey = decode(cookieKeyValue?.[0] ?? '');
-        if (cookieKey === key) return decode(cookieKeyValue?.[1] ?? '');
+        const cookieKeyValues = splittedCookie[0]?.split(';').map((a) => a.trim());
+
+        if (!cookieKeyValues) return null;
+
+        for (let keyIndex = 0; keyIndex <= cookieKeyValues.length; keyIndex++) {
+          const cookieKeyValue = cookieKeyValues[keyIndex]?.split('=');
+          const cookieKey = decode(cookieKeyValue?.[0] ?? '');
+
+          if (cookieKey === key) return decode(cookieKeyValue?.[1] ?? '');
+        }
       }
       return null;
     }
