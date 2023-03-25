@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## 1.2.1 (Mar 26, 2023)
+## 1.2.2 (Mar 26, 2023)
 
 - Tighten validation of parameters by adding actual field validation rather than depending on typescript types
 
-## 1.2.0 (May 10, 2022)
+## 1.2.1 (May 10, 2022)
 
 - Add support for applications with both server and client rendering like nextjs and gatsby
 - Bug fix for multiple cookie values
