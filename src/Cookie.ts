@@ -8,6 +8,16 @@ interface Options {
 export const encode = global?.window?.encodeURIComponent;
 export const decode = global?.window?.decodeURIComponent;
 
+export const errorsSchema = {
+  key: '"key" must be a string',
+  options: '"options" value must be an object',
+  options_domain: '"options.domain" must be a string',
+  options_expires: '"options.expires" must be a valid date',
+  options_path: '"options.path" must be a string',
+  options_secure: '"options.secure" must be a boolean',
+  value: '"value" must be a string',
+};
+
 export default class Cookie {
   private doc: Partial<Document> | undefined | string;
   constructor(domDocument?: Partial<Document & { cookie: string }> | string) {
@@ -22,6 +32,16 @@ export default class Cookie {
     if (typeof this.doc.cookie !== 'string') this.doc.cookie = '';
   }
 
+  private validateOptions = (options?: Options): void => {
+    if (options && typeof options !== 'object') throw new Error(errorsSchema.options);
+    if (options && options.domain && typeof options.domain !== 'string') throw new Error(errorsSchema.options_domain);
+    if (options && options.expires && !(options.expires instanceof Date)) throw new Error(errorsSchema.options_expires);
+    if (options && options.path && typeof options.path !== 'string') throw new Error(errorsSchema.options_path);
+    if (options && typeof options.secure !== 'undefined' && typeof options.secure !== 'boolean') {
+      throw new Error(errorsSchema.options_secure);
+    }
+  };
+
   /**
    * This method will get your cookies from the browser with the specified key
    *
@@ -34,6 +54,8 @@ export default class Cookie {
    *
    */
   get = (key: string): string | null => {
+    if (typeof key !== 'string') throw new Error(errorsSchema.key);
+
     if (typeof this.doc === 'object' && this.doc.cookie) {
       const splittedCookie = this.doc.cookie.split(/;\cookieString*/);
       for (let cookieIndex = 0; cookieIndex < splittedCookie.length; cookieIndex++) {
@@ -75,6 +97,10 @@ export default class Cookie {
    *
    */
   set = (key: string, value: string, options?: Options): string | undefined => {
+    if (typeof key !== 'string') throw new Error(errorsSchema.key);
+    if (typeof value !== 'string') throw new Error(errorsSchema.value);
+    this.validateOptions(options);
+
     let opts: Options | undefined = options;
 
     if (!opts) opts = {};
@@ -100,6 +126,8 @@ export default class Cookie {
    * cookie.remove("session_value")
    */
   remove = (key: string): void => {
+    if (typeof key !== 'string') throw new Error(errorsSchema.key);
+
     let cookieString = encode(key) + '=';
     cookieString += '; expires=' + new Date(0);
     if (typeof this.doc === 'object') {
@@ -107,7 +135,3 @@ export default class Cookie {
     }
   };
 }
-
-// const cookie = new Cookie(global?.window?.document);
-// export const Cookies = Cookie;
-// export default cookie;
