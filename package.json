@@ -41,7 +41,7 @@
     "postversion": "git push && git push --tags",
     "lint": "eslint src/*.ts src/**/*.ts",
     "lint:fix": "eslint src/*.ts src/**/*.ts --quiet --fix",
-    "test": "jest",
+    "test": "jest --coverage",
     "ts-coverage": "typescript-coverage-report --threshold=86",
     "version": "yarn run format && git add -A src"
   },
