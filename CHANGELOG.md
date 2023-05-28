@@ -3,6 +3,7 @@
 ## 1.2.3 (May 28, 2023)
 
 - Add support for node engines 14.17.1 and higher
+- Upgrade dev dependencies
 
 ## 1.2.2 (Mar 26, 2023)
 
