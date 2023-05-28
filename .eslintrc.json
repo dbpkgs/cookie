@@ -1,0 +1,30 @@
+{
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "reportUnusedDisableDirectives": true,
+  "rules": {
+    "no-confusing-arrow": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "no-useless-constructor": "error",
+    "no-dupe-class-members": "error",
+    "no-iterator": "error",
+    "no-restricted-properties": [
+      2,
+      {
+        "object": "require"
+      }
+    ],
+    "prefer-const": "error",
+    "one-var": ["error", "never"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "no-else-return": "error",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": true
+      }
+    ]
+  }
+}
