@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.3 (May 28, 2023)
+
+- Add support for node engines 14.17.1 and higher
+
 ## 1.2.2 (Mar 26, 2023)
 
 - Tighten validation of parameters by adding actual field validation rather than depending on typescript types
