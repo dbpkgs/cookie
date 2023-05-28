@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Install packages
-        run: node .yarn/releases/yarn-3.5.1.cjs install --frozen-lockfile
+        run: node .yarn/releases/yarn-3.5.1.cjs install --immutable
       - name: Check file types
         run: yarn check:type
       - name: Check files formatting
