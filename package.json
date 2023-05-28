@@ -40,8 +40,8 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn check:type && yarn lint && yarn test",
     "postversion": "git push && git push --tags",
-    "lint": "eslint .",
-    "lint:fix": "eslint -p tsconfig.json --quiet --fix",
+    "lint": "eslint src/*.ts src/**/*.ts",
+    "lint:fix": "eslint src/*.ts src/**/*.ts --quiet --fix",
     "test": "jest",
     "ts-coverage": "typescript-coverage-report --threshold=86",
     "version": "yarn run format && git add -A src"
